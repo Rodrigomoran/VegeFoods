@@ -1,10 +1,19 @@
 from django.contrib import admin
-from .models import Category, Product
+from .models import Category, Tag, Post
 
 
-class ProductAdmin(admin.ModelAdmin):
-    list_display = ['name', 'price', 'category', 'date']
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ['name', 'date']
 
 
-admin.site.register(Product, ProductAdmin)
-admin.site.register(Category)
+class TagAdmin(admin.ModelAdmin):
+    list_display = ['name', 'date']
+
+
+class PostAdmin(admin.ModelAdmin):
+    list_display = ['title', 'category', 'author', 'is_draft', 'date']
+
+
+admin.site.register(Category, CategoryAdmin)
+admin.site.register(Tag, TagAdmin)
+admin.site.register(Post, PostAdmin)
