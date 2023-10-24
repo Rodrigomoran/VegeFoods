@@ -2,8 +2,6 @@ from django.contrib import admin
 from .models import Category, Tag, Post
 
 
-class CategoryAdmin(admin.ModelAdmin):
-    list_display = ['name', 'date']
 
 
 class TagAdmin(admin.ModelAdmin):
